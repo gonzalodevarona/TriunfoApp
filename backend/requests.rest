@@ -1,0 +1,144 @@
+POST http://localhost:3000/api/register
+Content-Type: application/json
+
+{
+    "name":"Gonzalo",
+    "lastName":"De Varona",
+    "contactNumber": 3127061823,
+    "restaurantName":"Odiseo",
+    "nit": "1234", 
+    "restaurantType":"Restaurant",
+    "email":"gavo00@hotmail.com",
+    "password":"prueba",
+    "menu": []
+    
+}
+
+// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODY1YTcwNjBhYzQzZmM1NGY3ODBmNSIsInJlc3RhdXJhbnROYW1lIjoiT2Rpc2VvIiwiaWF0IjoxNjY5NzQ5MzYwLCJleHAiOjE2Njk3NTI5NjB9.-eR1YNuZolg23NFQjWMNkwc6dQ2X1rMa3PQxkYwrsys
+####
+
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "email":"gavo@hotmail.com",
+    "password":"prueba"
+}
+
+####
+
+POST http://localhost:3000/api/checkAuth
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODU2YjQ2MjNkNTMxMmY2ZTJjMDRhNyIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTc2NzAzMCwiZXhwIjoxNjY5NzcwNjMwfQ.z-PNa_sRY0Xw2I06PSbTi8Mb9jrKgHLH9LlkxarFexQ
+
+###
+
+PUT http://localhost:3000/api/admin
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "restaurantAdminId":"63853aa9dd8e910f41df4b72",
+    "restaurantAdmin":{
+        "name": "Bustamante"
+    }
+}
+
+
+###
+GET http://localhost:3000/api/menu/63865a7060ac43fc54f780f5
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+
+
+
+// Category ENDPOINTS
+
+###
+POST http://localhost:3000/api/menu/category
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "restaurantAdminId":"63865a7060ac43fc54f780f5",
+    "category":{
+        "name": "Carnes",
+        "bannerImg": "https://elmiradordeatienza.com/imagenes/el-mirador-de-atienza-restaurante-lomitos-de-corzo-carta-1600px.jpg'"
+
+    }
+}
+
+###
+DELETE http://localhost:3000/api/menu/category
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "restaurantAdminId":"63865a7060ac43fc54f780f5",
+    "categoryId": "63865b4460ac43fc54f780f9"
+}
+
+###
+GET http://localhost:3000/api/menu/category/63865d1bcc38b6cf62d563f6
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+
+
+// Dish ENDPOINTS
+
+###
+GET http://localhost:3000/api/menu/category/dish
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "categoryId":"63865bc560ac43fc54f780fe",
+    "dishId": "63865d9e60ac43fc54f7810e"
+}
+
+###
+POST http://localhost:3000/api/menu/category/dish
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "categoryId":"63865bf260ac43fc54f78104",
+    "dish":{
+        "name": "Morrillo",
+        "description": "Suspendisse non tortor justo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos",
+        "dishImg": "https://static.wixstatic.com/media/d269c2_c47abafbabf243cdab2ff1eafb7f8f28~mv2.jpg/v1/fit/w_1000%2Ch_678%2Cal_c%2Cq_80/file.jpg''",
+        "price": 38
+    }
+}
+
+###
+
+DELETE http://localhost:3000/api/menu/category/dish
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "categoryId":"63865bf260ac43fc54f78104",
+    "dishId": "63866157752c4c8f25c2d2dc"
+}
+
+###
+
+PUT http://localhost:3000/api/menu/category/dish
+Content-Type: application/json
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNzJmYzczM2UzMzkxNzlmNjc3YTQxOCIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTYxMTU0MywiZXhwIjoxNjY5NjE1MTQzfQ.7Xnf8LDvdEWcroM00i0Rne8NPp8KWu7qCdTuCpuimk8
+
+{
+    "categoryId":"6385925245f83736bde8b1fe",
+    "dishId": "63869f0a74758d39a4075e21",
+    "dish":{
+        "name": "melooo",
+        "description": "sopitaa",
+        "dishImg": "ok",
+        "price": 5,
+        "_id": "63866ae3c1cc6fbbbb8485b0"
+        
+    }
+}
+
