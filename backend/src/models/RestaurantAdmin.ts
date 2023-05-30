@@ -1,7 +1,9 @@
 import mongoose from 'mongoose';
 
+const Schema = mongoose.Schema;
 
-const supplyChainUserSchema = new mongoose.Schema({
+
+const restaurantAdminSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -14,19 +16,15 @@ const supplyChainUserSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    role: {
+    restaurantName: {
         type: String,
         required: true
     },
-    nameEnterprise: {
+    nit: {
         type: String,
         required: true
     },
-    idType: {
-        type: String,
-        required: true
-    },
-    id: {
+    restaurantType: {
         type: String,
         required: true
     },
@@ -37,10 +35,13 @@ const supplyChainUserSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    menu: [{
+        type: Schema.Types.ObjectId,
+        ref: "Category"
+    }]
 })
 
-const SupplyChainUser = mongoose.model('SupplyChainUser', supplyChainUserSchema)
+const RestaurantAdmin = mongoose.model('RestaurantAdmin', restaurantAdminSchema)
 
-export default SupplyChainUser;
-
+export default RestaurantAdmin;

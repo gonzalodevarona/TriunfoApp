@@ -1,4 +1,4 @@
-import RestaurantAdminService from "./RestaurantAdmin.service";
+import SupplyChainUserService from "./SupplyChainUser.service";
 import jwt from 'jsonwebtoken';
 import {comparePassword} from "../utils/encrypt";
 
@@ -9,7 +9,7 @@ class LoginService {
   async login (email: string, password: string) {
     try{
 
-      let user = await RestaurantAdminService.findRestaurantAdminByEmail( email )
+      let user = await SupplyChainUserService.findSupplyChainUserByEmail( email )
       
 
       let passwordCorrect = false;
@@ -25,7 +25,8 @@ class LoginService {
 
       const userForToken = {
         id: user._id,
-        restaurantName: user.restaurantName
+        nameEnterprise: user.nameEnterprise,
+        role: user.role
       }
     
       const token = jwt.sign(

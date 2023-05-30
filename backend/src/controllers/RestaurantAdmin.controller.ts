@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import RestaurantAdminService from "../services/RestaurantAdmin.service";
 import { encrypt } from "../utils/encrypt";
-import LoginService from "../services/Login.service";
+import LoginService from "../services/login.service";
 
 
 

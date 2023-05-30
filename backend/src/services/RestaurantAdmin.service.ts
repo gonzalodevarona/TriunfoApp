@@ -52,7 +52,7 @@ class RestaurantAdminService {
     async getMenuCategoriesByAdminId(id: string) {
       try {
         const restaurantAdmin = await RestaurantAdmin.findOne({ _id: id }).populate('menu');
-        return restaurantAdmin?.menu;
+        return restaurantAdmin;
       } catch (e: any) {
         throw new Error(e);
       }

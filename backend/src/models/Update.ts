@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+const Schema = mongoose.Schema;
 
 const updateSchema = new mongoose.Schema({
     date: {
@@ -11,9 +12,15 @@ const updateSchema = new mongoose.Schema({
         required: true
     },
     batchId: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "BatchId",
         required: true
-    }
+    },
+    supplyChainUserId: {
+        type: Schema.Types.ObjectId,
+        ref: "SupplyChainUserId",
+        required: true
+    },
 })
 
 const Update = mongoose.model('Update', updateSchema)

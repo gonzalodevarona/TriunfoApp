@@ -6,7 +6,7 @@ const ObjectId = mongodb.ObjectID;
 
 class CategoryService {
 
-    async createCategory(idRestaurantAdmin : string, input : typeof Category) {
+    async createCategory(idRestaurantAdmin : string, _input : typeof Category) {
         try {
 
           let foundRestaurantAdmin = await RestaurantAdminService.findRestaurantAdminById(idRestaurantAdmin);
@@ -14,9 +14,9 @@ class CategoryService {
             return foundRestaurantAdmin;
           }
 
-          const newCategory = await Category.create(input);
+          //const newCategory = await Category.create(input);
           
-          await foundRestaurantAdmin.menu.push(newCategory._id);
+          // await foundRestaurantAdmin.menu.push(newCategory._id);
           return foundRestaurantAdmin.save();
 
           // const categoriesUpdated = await RestaurantAdminService.getMenuCategoriesByAdminId(idRestaurantAdmin);

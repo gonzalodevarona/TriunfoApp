@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 
+const Schema = mongoose.Schema;
 
 const batchSchema = new mongoose.Schema({
     dateProduced: {
@@ -16,6 +17,11 @@ const batchSchema = new mongoose.Schema({
     },
     isColdStorage: {
         type: Boolean,
+        required: true
+    },
+    whoAddIt: {
+        type: Schema.Types.ObjectId,
+        ref: "SupplyChainUserId",
         required: true
     }
 })

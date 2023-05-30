@@ -5,12 +5,12 @@ Content-Type: application/json
     "name":"Gonzalo",
     "lastName":"De Varona",
     "contactNumber": 3127061823,
-    "restaurantName":"Odiseo",
-    "nit": "1234", 
-    "restaurantType":"Restaurant",
+    "role":"CEO",
+    "nameEnterprise":"DEVCO",
+    "idType": "CC", 
+    "id":"1006017477",
     "email":"gavo00@hotmail.com",
-    "password":"prueba",
-    "menu": []
+    "password":"prueba"
     
 }
 
@@ -21,14 +21,57 @@ POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "email":"gavo@hotmail.com",
+    "email":"gavo00@hotmail.com",
     "password":"prueba"
 }
 
 ####
 
+GET http://localhost:3000/api/user/6474de78f9de44325fdc38df
+Content-Type: application/json
+
+
+####
+
+POST http://localhost:3000/api/batch
+Content-Type: application/json
+
+{
+    "dateProduced": "2002-12-09",
+    "productName": "sopa enlatada",
+    "producerName": "knox",
+    "isColdStorage": false,
+    "whoAddIt": "6474de78f9de44325fdc38df"  
+}
+
+###
+
+POST http://localhost:3000/api/update
+Content-Type: application/json
+
+{
+    "date": "2002-12-09",
+    "description": "sopa enlatada",
+    "batchId": "647583b12407ae9b4292ec6a",
+    "supplyChainUserId": "6474de78f9de44325fdc38df"
+}
+
+###
+
+
+GET http://localhost:3000/api/batch/
+
+
+####
+
+GET http://localhost:3000/api/update/
+
+
+####
+
+
 POST http://localhost:3000/api/checkAuth
-Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzODU2YjQ2MjNkNTMxMmY2ZTJjMDRhNyIsInJlc3RhdXJhbnROYW1lIjoiQ2FyYW1iYSIsImlhdCI6MTY2OTc2NzAzMCwiZXhwIjoxNjY5NzcwNjMwfQ.z-PNa_sRY0Xw2I06PSbTi8Mb9jrKgHLH9LlkxarFexQ
+Authorization: Bearer: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NzRkZTc4ZjlkZTQ0MzI1ZmRjMzhkZiIsIm5hbWVFbnRlcnByaXNlIjoiREVWQ08iLCJyb2xlIjoiQ0VPIiwiaWF0IjoxNjg1NDIyMDA0LCJleHAiOjE2ODU0MjU2MDR9.tq4SXL2krfiBxsB1FTunL-LZP-o30Ps6z0KI9Kyyi3Y
 
 ###
 
