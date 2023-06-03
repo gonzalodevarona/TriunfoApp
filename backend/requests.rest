@@ -37,9 +37,9 @@ POST http://localhost:3000/api/batch
 Content-Type: application/json
 
 {
-    "dateProduced": "2002-12-09",
-    "productName": "sopa enlatada",
-    "producerName": "knox",
+    "dateProduced": "2023-05-28",
+    "productName": "Huevos de gallina feliz",
+    "producerName": "Avicola Santa Anita",
     "isColdStorage": false,
     "whoAddIt": "6474de78f9de44325fdc38df"  
 }
@@ -50,8 +50,8 @@ POST http://localhost:3000/api/update
 Content-Type: application/json
 
 {
-    "date": "2002-12-09",
-    "description": "sopa enlatada",
+    "date": "2023-05-29",
+    "description": "Recepción del producto en centro de acopio a conformidad",
     "batchId": "647583b12407ae9b4292ec6a",
     "supplyChainUserId": "6474de78f9de44325fdc38df"
 }
