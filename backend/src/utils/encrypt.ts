@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt';
+const bcrypt = require("bcrypt");
 
 function encrypt (secretString : string) {
     return bcrypt.hash(secretString, 10);
